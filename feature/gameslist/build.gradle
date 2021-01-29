@@ -1,0 +1,8 @@
+import com.erill.roger.speedrun.Dependencies
+
+apply from: "$rootProject.projectDir/gradle/android-library.gradle"
+
+dependencies {
+
+    implementation project(":remote")
+}

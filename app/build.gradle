@@ -39,6 +39,7 @@ android {
 dependencies {
 
     implementation project(":remote")
+    implementation project(":feature:gameslist")
 
     implementation Dependencies.kotlinStdLib
     implementation Dependencies.AndroidX.coreKtx
