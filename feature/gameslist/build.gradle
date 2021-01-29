@@ -5,4 +5,10 @@ apply from: "$rootProject.projectDir/gradle/android-library.gradle"
 dependencies {
 
     implementation project(":remote")
+
+    implementation Dependencies.rxjava2.core
+    implementation Dependencies.arrow.core
+
+    implementation Dependencies.dagger.core
+    kapt Dependencies.dagger.compiler
 }
