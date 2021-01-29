@@ -5,6 +5,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-allopen'
 }
 
 android {
@@ -34,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+allOpen {
+    annotation('com.erill.roger.commons.OpenClass')
 }
 
 dependencies {

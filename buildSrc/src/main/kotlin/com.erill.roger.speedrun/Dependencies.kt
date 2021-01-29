@@ -39,6 +39,7 @@ object Dependencies {
     object Gradle {
         const val androidGradlePlugin = "com.android.tools.build:gradle:${Version.androidGradlePlugin}"
         const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kotlin}"
+        const val allopen = "org.jetbrains.kotlin:kotlin-allopen:${Version.kotlin}"
     }
 
     object AndroidX {

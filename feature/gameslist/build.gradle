@@ -5,6 +5,7 @@ apply from: "$rootProject.projectDir/gradle/android-library.gradle"
 dependencies {
 
     implementation project(":remote")
+    implementation project(":commons")
 
     implementation Dependencies.rxjava2.core
     implementation Dependencies.arrow.core
