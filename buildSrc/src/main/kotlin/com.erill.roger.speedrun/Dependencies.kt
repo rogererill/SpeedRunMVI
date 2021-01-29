@@ -22,6 +22,13 @@ object Version {
     const val junit = "4.13"
     const val androidTestJunit = "1.1.2"
     const val espresso = "3.3.0"
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.9.0"
+    const val moshi = "1.11.0"
+    const val rxJava = "2.2.20"
+    const val rxAndroid = "2.1.1"
+    const val arrow = "0.11.0"
+    const val dagger = "2.29.1"
 }
 
 object Dependencies {
@@ -44,5 +51,35 @@ object Dependencies {
 
     object Google {
         const val material = "com.google.android.material:material:${Version.materialDesign}"
+    }
+
+    object retrofit {
+        const val core = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
+        const val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Version.retrofit}"
+        const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Version.retrofit}"
+    }
+
+    object okhttp {
+        const val core = "com.squareup.okhttp3:okhttp:${Version.okhttp}"
+        const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Version.okhttp}"
+    }
+
+    object moshi {
+        const val core = "com.squareup.moshi:moshi:${Version.moshi}"
+        const val codegen = "com.squareup.moshi:moshi-kotlin-codegen:${Version.moshi}"
+    }
+
+    object rxjava2 {
+        const val core = "io.reactivex.rxjava2:rxjava:${Version.rxJava}"
+        const val android = "io.reactivex.rxjava2:rxandroid:${Version.rxAndroid}"
+    }
+
+    object arrow {
+        const val core = "io.arrow-kt:arrow-core:${Version.arrow}"
+    }
+
+    object dagger {
+        const val core = "com.google.dagger:dagger:${Version.dagger}"
+        const val compiler = "com.google.dagger:dagger-compiler:${Version.dagger}"
     }
 }
