@@ -12,4 +12,8 @@ dependencies {
 
     implementation Dependencies.dagger.core
     kapt Dependencies.dagger.compiler
+
+    testImplementation Dependencies.junit
+    testImplementation Dependencies.mockito.core
+    testImplementation Dependencies.mockito.kotlin
 }

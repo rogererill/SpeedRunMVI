@@ -29,6 +29,8 @@ object Version {
     const val rxAndroid = "2.1.1"
     const val arrow = "0.11.0"
     const val dagger = "2.29.1"
+    const val mockito = "3.5.13"
+    const val mockitoKotlin = "2.2.0"
 }
 
 object Dependencies {
@@ -82,5 +84,11 @@ object Dependencies {
     object dagger {
         const val core = "com.google.dagger:dagger:${Version.dagger}"
         const val compiler = "com.google.dagger:dagger-compiler:${Version.dagger}"
+    }
+
+    object mockito {
+        const val core = "org.mockito:mockito-core:${Version.mockito}"
+        const val kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Version.mockitoKotlin}"
+        const val android = "org.mockito:mockito-android:${Version.mockito}"
     }
 }
