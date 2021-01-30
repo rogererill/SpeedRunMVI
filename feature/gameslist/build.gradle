@@ -13,6 +13,10 @@ dependencies {
     implementation Dependencies.dagger.core
     kapt Dependencies.dagger.compiler
 
+    implementation Dependencies.moshi.core
+    kapt Dependencies.moshi.codegen
+    implementation Dependencies.retrofit.core
+
     testImplementation Dependencies.junit
     testImplementation Dependencies.mockito.core
     testImplementation Dependencies.mockito.kotlin
