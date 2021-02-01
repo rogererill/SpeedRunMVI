@@ -2,10 +2,24 @@ import com.erill.roger.speedrun.Dependencies
 
 apply from: "$rootProject.projectDir/gradle/android-library.gradle"
 
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
 dependencies {
 
     implementation project(":remote")
     implementation project(":commons")
+
+    implementation Dependencies.Google.material
+    implementation Dependencies.AndroidX.appCompat
+    implementation Dependencies.AndroidX.constraintLayout
+    implementation Dependencies.AndroidX.recyclerView
+
+    implementation Dependencies.glide.core
+    annotationProcessor Dependencies.glide.compiler
 
     implementation Dependencies.rxjava2.core
     implementation Dependencies.arrow.core

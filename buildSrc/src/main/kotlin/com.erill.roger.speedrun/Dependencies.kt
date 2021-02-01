@@ -31,6 +31,8 @@ object Version {
     const val dagger = "2.29.1"
     const val mockito = "3.5.13"
     const val mockitoKotlin = "2.2.0"
+    const val recyclerView = "1.1.0"
+    const val glide = "4.11.0"
 }
 
 object Dependencies {
@@ -50,6 +52,7 @@ object Dependencies {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
         const val junit = "androidx.test.ext:junit:${Version.androidTestJunit}"
         const val espresso = "androidx.test.espresso:espresso-core:${Version.espresso}"
+        const val recyclerView = "androidx.recyclerview:recyclerview:${Version.recyclerView}"
     }
 
     object Google {
@@ -90,5 +93,10 @@ object Dependencies {
         const val core = "org.mockito:mockito-core:${Version.mockito}"
         const val kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Version.mockitoKotlin}"
         const val android = "org.mockito:mockito-android:${Version.mockito}"
+    }
+
+    object glide {
+        const val core = "com.github.bumptech.glide:glide:${Version.glide}"
+        const val compiler = "com.github.bumptech.glide:compiler:${Version.glide}"
     }
 }

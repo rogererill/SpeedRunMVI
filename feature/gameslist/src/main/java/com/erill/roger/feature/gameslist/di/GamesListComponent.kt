@@ -1,5 +1,6 @@
 package com.erill.roger.feature.gameslist.di
 
+import com.erill.roger.feature.gameslist.presentation.GamesListActivity
 import com.erill.roger.remote.RemoteComponent
 import dagger.Component
 
@@ -15,4 +16,6 @@ interface GamesListComponent {
 
         fun build(): GamesListComponent
     }
+
+    fun gamesListActivityBuilder(): GamesListActivity.Component.Builder
 }
