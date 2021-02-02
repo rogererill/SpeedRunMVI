@@ -44,6 +44,7 @@ allOpen {
 dependencies {
 
     implementation project(":remote")
+    implementation project(":commons")
     implementation project(":feature:gameslist")
 
     implementation Dependencies.kotlinStdLib

@@ -4,11 +4,15 @@ import com.erill.roger.commons.mvi.MviProcessor
 import com.erill.roger.feature.gameslist.domain.GetGamesUseCase
 import io.reactivex.Flowable
 import io.reactivex.FlowableTransformer
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.Scheduler
 import javax.inject.Inject
+import javax.inject.Named
 
-class GamesListProcessor @Inject constructor(private val useCase: GetGamesUseCase) : MviProcessor<GamesListAction, GamesListResult> {
+class GamesListProcessor @Inject constructor(
+    private val useCase: GetGamesUseCase,
+    @Named("io") private val io: Scheduler,
+    @Named("main") private val main: Scheduler,
+) : MviProcessor<GamesListAction, GamesListResult> {
 
     private val loadDataAction = FlowableTransformer<GamesListAction, GamesListResult> { actions ->
         actions
@@ -21,8 +25,8 @@ class GamesListProcessor @Inject constructor(private val useCase: GetGamesUseCas
                             { GamesListResult.GamesLoaded(it) }
                         )
                     }
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeOn(io)
+                    .observeOn(main)
                     .startWith(GamesListResult.Loading)
             }
     }
