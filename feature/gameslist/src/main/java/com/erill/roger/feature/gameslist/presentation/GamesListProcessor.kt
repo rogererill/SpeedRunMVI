@@ -1,5 +1,6 @@
 package com.erill.roger.feature.gameslist.presentation
 
+import com.erill.roger.commons.OpenClass
 import com.erill.roger.commons.mvi.MviProcessor
 import com.erill.roger.feature.gameslist.domain.GetGamesUseCase
 import io.reactivex.Flowable
@@ -8,6 +9,7 @@ import io.reactivex.Scheduler
 import javax.inject.Inject
 import javax.inject.Named
 
+@OpenClass
 class GamesListProcessor @Inject constructor(
     private val useCase: GetGamesUseCase,
     @Named("io") private val io: Scheduler,
