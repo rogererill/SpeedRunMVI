@@ -33,6 +33,8 @@ object Version {
     const val mockitoKotlin = "2.2.0"
     const val recyclerView = "1.1.0"
     const val glide = "4.11.0"
+    const val rxRelay = "2.1.1"
+    const val lifecycle = "2.2.0"
 }
 
 object Dependencies {
@@ -53,6 +55,7 @@ object Dependencies {
         const val junit = "androidx.test.ext:junit:${Version.androidTestJunit}"
         const val espresso = "androidx.test.espresso:espresso-core:${Version.espresso}"
         const val recyclerView = "androidx.recyclerview:recyclerview:${Version.recyclerView}"
+        const val lifecycle = "androidx.lifecycle:lifecycle-common-java8:${Version.lifecycle}"
     }
 
     object Google {
@@ -78,6 +81,7 @@ object Dependencies {
     object rxjava2 {
         const val core = "io.reactivex.rxjava2:rxjava:${Version.rxJava}"
         const val android = "io.reactivex.rxjava2:rxandroid:${Version.rxAndroid}"
+        const val rxRelay = "com.jakewharton.rxrelay2:rxrelay:${Version.rxRelay}"
     }
 
     object arrow {

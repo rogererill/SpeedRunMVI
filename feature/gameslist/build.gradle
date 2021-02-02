@@ -17,11 +17,13 @@ dependencies {
     implementation Dependencies.AndroidX.appCompat
     implementation Dependencies.AndroidX.constraintLayout
     implementation Dependencies.AndroidX.recyclerView
+    implementation Dependencies.AndroidX.lifecycle
 
     implementation Dependencies.glide.core
     annotationProcessor Dependencies.glide.compiler
 
     implementation Dependencies.rxjava2.core
+    implementation Dependencies.rxjava2.android
     implementation Dependencies.arrow.core
 
     implementation Dependencies.dagger.core
