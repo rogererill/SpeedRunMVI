@@ -24,6 +24,7 @@ dependencies {
 
     implementation Dependencies.rxjava2.core
     implementation Dependencies.rxjava2.android
+    implementation Dependencies.rxjava2.rxRelay
     implementation Dependencies.arrow.core
 
     implementation Dependencies.dagger.core

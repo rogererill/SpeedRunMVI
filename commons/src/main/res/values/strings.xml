@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SpeedRun</string>
+    <string name="error_loading">Error getting games</string>
 </resources>
