@@ -1,3 +1,4 @@
+include ':feature:gamedetail'
 include ':commons'
 include ':feature:gameslist'
 include ':remote'

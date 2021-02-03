@@ -1,0 +1,38 @@
+import com.erill.roger.speedrun.Dependencies
+
+apply from: "$rootProject.projectDir/gradle/android-library.gradle"
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation project(":remote")
+    implementation project(":commons")
+
+    implementation Dependencies.Google.material
+    implementation Dependencies.AndroidX.appCompat
+    implementation Dependencies.AndroidX.lifecycle
+
+    implementation Dependencies.glide.core
+    annotationProcessor Dependencies.glide.compiler
+
+    implementation Dependencies.rxjava2.core
+    implementation Dependencies.rxjava2.android
+    implementation Dependencies.rxjava2.rxRelay
+    implementation Dependencies.arrow.core
+
+    implementation Dependencies.dagger.core
+    kapt Dependencies.dagger.compiler
+
+    implementation Dependencies.moshi.core
+    kapt Dependencies.moshi.codegen
+    implementation Dependencies.retrofit.core
+
+    testImplementation Dependencies.junit
+    testImplementation Dependencies.mockito.core
+    testImplementation Dependencies.mockito.kotlin
+}

@@ -46,6 +46,7 @@ dependencies {
     implementation project(":remote")
     implementation project(":commons")
     implementation project(":feature:gameslist")
+    implementation project(":feature:gamedetail")
 
     implementation Dependencies.kotlinStdLib
     implementation Dependencies.AndroidX.coreKtx
