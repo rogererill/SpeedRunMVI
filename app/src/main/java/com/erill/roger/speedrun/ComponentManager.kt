@@ -8,6 +8,8 @@ import com.erill.roger.feature.gameslist.di.DaggerGamesListComponent
 import com.erill.roger.feature.gameslist.di.GamesListComponent
 import com.erill.roger.remote.DaggerRemoteComponentImpl
 import com.erill.roger.remote.RemoteComponent
+import com.erill.roger.speedrun.navigation.DaggerNavigationComponent
+import com.erill.roger.speedrun.navigation.NavigationComponent
 
 class ComponentManager {
 
@@ -19,11 +21,17 @@ class ComponentManager {
         DaggerCommonsComponentImpl.builder().build()
     }
 
+    private val navigationComponent: NavigationComponent by lazy {
+        DaggerNavigationComponent.builder()
+            .build()
+    }
+
     val gamesListComponent: GamesListComponent by lazy {
         DaggerGamesListComponent
             .builder()
             .with(remoteComponent)
             .with(commonsComponent)
+            .with(navigationComponent)
             .build()
     }
 
