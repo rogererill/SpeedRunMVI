@@ -3,7 +3,7 @@ package com.erill.roger.feature.gameslist.presentation
 import androidx.lifecycle.LifecycleOwner
 import arrow.core.Either
 import com.erill.roger.feature.gameslist.domain.GetGamesUseCase
-import com.erill.roger.feature.gameslist.entities.Game
+import com.erill.roger.commons.entities.Game
 import com.jakewharton.rxrelay2.PublishRelay
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock

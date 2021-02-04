@@ -1,4 +1,4 @@
-package com.erill.roger.feature.gameslist.entities
+package com.erill.roger.commons.entities
 
 data class Game(
     val id: String,

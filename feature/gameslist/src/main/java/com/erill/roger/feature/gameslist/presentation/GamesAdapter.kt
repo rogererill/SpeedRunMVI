@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.erill.roger.feature.gameslist.R
-import com.erill.roger.feature.gameslist.entities.Game
+import com.erill.roger.commons.entities.Game
 
 class GamesAdapter(private val clickListener: (Game) -> Unit) : RecyclerView.Adapter<GameViewHolder>() {
 

@@ -2,7 +2,7 @@ package com.erill.roger.feature.gameslist.data.remote
 
 import arrow.core.Either
 import com.erill.roger.commons.OpenClass
-import com.erill.roger.feature.gameslist.entities.Game
+import com.erill.roger.commons.entities.Game
 import com.erill.roger.remote.toGenericEither
 import io.reactivex.Single
 import javax.inject.Inject

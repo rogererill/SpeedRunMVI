@@ -1,7 +1,7 @@
 package com.erill.roger.feature.gameslist.domain
 
 import arrow.core.Either
-import com.erill.roger.feature.gameslist.entities.Game
+import com.erill.roger.commons.entities.Game
 import io.reactivex.Single
 
 interface Repository {

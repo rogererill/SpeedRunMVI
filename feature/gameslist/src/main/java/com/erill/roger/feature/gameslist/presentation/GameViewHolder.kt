@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.erill.roger.feature.gameslist.R
-import com.erill.roger.feature.gameslist.entities.Game
+import com.erill.roger.commons.entities.Game
 
 class GameViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

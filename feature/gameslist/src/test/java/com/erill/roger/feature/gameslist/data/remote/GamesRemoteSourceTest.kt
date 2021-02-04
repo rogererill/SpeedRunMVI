@@ -6,7 +6,7 @@ import com.erill.roger.feature.gameslist.data.entities.GameAssetsApiEntity
 import com.erill.roger.feature.gameslist.data.entities.GameListApiEntity
 import com.erill.roger.feature.gameslist.data.entities.GameNamesApiEntity
 import com.erill.roger.feature.gameslist.data.entities.ImageApiEntity
-import com.erill.roger.feature.gameslist.entities.Game
+import com.erill.roger.commons.entities.Game
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

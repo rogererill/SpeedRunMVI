@@ -1,6 +1,6 @@
 package com.erill.roger.feature.gameslist.presentation
 
-import com.erill.roger.feature.gameslist.entities.Game
+import com.erill.roger.commons.entities.Game
 
 sealed class GamesListResult {
     data class GamesLoaded(val gameList: List<Game>) : GamesListResult()
