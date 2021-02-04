@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.erill.roger.feature.gamedetail">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.erill.roger.feature.gamedetail">
 
+    <application>
+        <activity android:name=".presentation.GameRunActivity" />
+    </application>
 </manifest>

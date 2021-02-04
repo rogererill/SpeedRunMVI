@@ -1,6 +1,7 @@
 package com.erill.roger.feature.gamedetail.di
 
 import com.erill.roger.commons.CommonsComponent
+import com.erill.roger.feature.gamedetail.presentation.GameRunActivity
 import com.erill.roger.remote.RemoteComponent
 import dagger.Component
 
@@ -18,4 +19,6 @@ interface GameRunComponent {
 
         fun build(): GameRunComponent
     }
+
+    fun gameRunActivityBuilder(): GameRunActivity.Component.Builder
 }

@@ -16,6 +16,7 @@ dependencies {
     implementation Dependencies.Google.material
     implementation Dependencies.AndroidX.appCompat
     implementation Dependencies.AndroidX.lifecycle
+    implementation Dependencies.AndroidX.constraintLayout
 
     implementation Dependencies.glide.core
     annotationProcessor Dependencies.glide.compiler
