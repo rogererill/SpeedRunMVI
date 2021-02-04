@@ -2,6 +2,8 @@ package com.erill.roger.speedrun
 
 import com.erill.roger.commons.CommonsComponent
 import com.erill.roger.commons.DaggerCommonsComponentImpl
+import com.erill.roger.feature.gamedetail.di.DaggerGameRunComponent
+import com.erill.roger.feature.gamedetail.di.GameRunComponent
 import com.erill.roger.feature.gameslist.di.DaggerGamesListComponent
 import com.erill.roger.feature.gameslist.di.GamesListComponent
 import com.erill.roger.remote.DaggerRemoteComponentImpl
@@ -19,6 +21,14 @@ class ComponentManager {
 
     val gamesListComponent: GamesListComponent by lazy {
         DaggerGamesListComponent
+            .builder()
+            .with(remoteComponent)
+            .with(commonsComponent)
+            .build()
+    }
+
+    val gameRunComponent: GameRunComponent by lazy {
+        DaggerGameRunComponent
             .builder()
             .with(remoteComponent)
             .with(commonsComponent)
