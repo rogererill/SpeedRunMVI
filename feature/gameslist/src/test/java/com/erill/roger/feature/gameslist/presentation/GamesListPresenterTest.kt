@@ -2,8 +2,9 @@ package com.erill.roger.feature.gameslist.presentation
 
 import androidx.lifecycle.LifecycleOwner
 import arrow.core.Either
-import com.erill.roger.feature.gameslist.domain.GetGamesUseCase
 import com.erill.roger.commons.entities.Game
+import com.erill.roger.feature.gameslist.domain.GetGamesUseCase
+import com.erill.roger.feature.gameslist.presentation.navigator.GamesListOutNavigator
 import com.jakewharton.rxrelay2.PublishRelay
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
@@ -27,11 +28,12 @@ class GamesListPresenterTest {
     }
 
     private val owner: LifecycleOwner = mock()
-    private val presenter = GamesListPresenter(view, GamesListProcessor(useCase, Schedulers.trampoline(), Schedulers.trampoline()))
+    private val navigator: GamesListOutNavigator = mock()
+    private val presenter = GamesListPresenter(view, GamesListProcessor(useCase, Schedulers.trampoline(), Schedulers.trampoline()), navigator)
 
     @After
     fun tearDown() {
-        verifyNoMoreInteractions(view, useCase)
+        verifyNoMoreInteractions(view, useCase, navigator)
     }
 
     @Test
@@ -60,11 +62,13 @@ class GamesListPresenterTest {
     fun testNavigate() {
         presenter.onCreate(owner)
 
-        eventsObs.accept(GamesListViewIntent.GameClicked(Game("1", "name", "logourl")))
+        val game = Game("1", "name", "logourl")
+        eventsObs.accept(GamesListViewIntent.GameClicked(game))
 
         verify(view).userIntents
         verify(view).render(GamesListState.Loading)
         verify(view).render(GamesListState.Data(emptyList()))
         verify(useCase).getGames()
+        verify(navigator).goToGameDetail(game)
     }
 }

@@ -59,7 +59,7 @@ class GamesListProcessorTest {
 
     @Test
     fun testIdleResult() {
-        val flowableLoadData = Flowable.just(GamesListAction.Navigate)
+        val flowableLoadData = Flowable.just(GamesListAction.Navigate(Game("1", "name", "url")))
         flowableLoadData
             .compose(processor.processAction())
             .test()

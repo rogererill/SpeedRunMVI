@@ -1,8 +1,8 @@
 package com.erill.roger.feature.gameslist.presentation
 
-import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import com.erill.roger.feature.gameslist.presentation.navigator.GamesListOutNavigator
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
@@ -11,7 +11,8 @@ import javax.inject.Inject
 
 class GamesListPresenter @Inject constructor(
     private val view: GamesListView,
-    private val processor: GamesListProcessor
+    private val processor: GamesListProcessor,
+    private val navigator: GamesListOutNavigator
 ) : DefaultLifecycleObserver {
 
     private val disposable = CompositeDisposable()
@@ -24,13 +25,13 @@ class GamesListPresenter @Inject constructor(
             .map {
                 when (it) {
                     is GamesListViewIntent.InitialLoad -> GamesListAction.LoadData
-                    is GamesListViewIntent.GameClicked -> GamesListAction.Navigate
+                    is GamesListViewIntent.GameClicked -> GamesListAction.Navigate(it.game)
                     is GamesListViewIntent.Refresh -> GamesListAction.LoadData
                 }
             }
             .doOnNext {
                 when (it) {
-                    GamesListAction.Navigate -> Log.d("TESTTAG", "navigate from here to new screen")
+                    is GamesListAction.Navigate -> navigator.goToGameDetail(it.game)
                     else -> {
                         /* no-op */
                     }

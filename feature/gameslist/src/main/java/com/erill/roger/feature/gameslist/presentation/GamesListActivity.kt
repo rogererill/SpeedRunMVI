@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.erill.roger.feature.gameslist.databinding.ActivityGameslistBinding
 import com.erill.roger.feature.gameslist.di.GamesListComponentProvider
+import com.erill.roger.feature.gameslist.presentation.navigator.GameListNavigatorModule
 import com.jakewharton.rxrelay2.PublishRelay
 import com.jakewharton.rxrelay2.Relay
 import dagger.BindsInstance
@@ -37,6 +38,7 @@ class GamesListActivity : AppCompatActivity(), GamesListView {
         (applicationContext as GamesListComponentProvider).gamesListComponent
             .gamesListActivityBuilder()
             .withView(this)
+            .withActivity(this)
             .build()
             .inject(this)
 
@@ -69,13 +71,16 @@ class GamesListActivity : AppCompatActivity(), GamesListView {
         }
     }
 
-    @Subcomponent
+    @Subcomponent(modules = [GameListNavigatorModule::class])
     interface Component {
         @Subcomponent.Builder
         interface Builder {
 
             @BindsInstance
             fun withView(view: GamesListView): Builder
+
+            @BindsInstance
+            fun withActivity(activity: AppCompatActivity): Builder
 
             fun build(): Component
         }
